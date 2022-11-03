@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Alisson</title>
+    <script src="bd.js"></script>
+    <script src="index.js"></script>
+    
+
+    <style>
+        :root { 
+            --cor-background: #212123;
+            --cor-reflexo: rgba(255, 255, 255, 0.4);
+            --cores-dancantes: rgb(76, 217, 105), rgb(52, 170, 220), rgb(88, 86, 217),
+                rgb(255, 45, 83);
+                
+        }
+
+        * {
+            font-family: "Verdana", sans-serif;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            letter-spacing: 3px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+            margin: 0;
+        }
+
+        html {
+            padding: 10rem;
+            background-color: #212123;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #EFEFEF;
+        }
+
+        .conteudo {
+            background: linear-gradient(to right, var(--cores-dancantes));
+            width: 550px;
+            height: 390px;
+            border-radius: 10px;
+            position: center;
+            z-index: 999;
+            animation: coresDancantes 1s linear infinite;
+        }
+
+        @keyframes coresDancantes {
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .conteudo .caixa,
+        .conteudo span {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .conteudo .caixa {
+            z-index: 1;
+            background-color: var(--cor-background);
+            width: 500px;
+            height: 350px;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .conteudo>span {
+            height: 100%;
+            width: 100%;
+            background: center;
+            border-radius: 10px;
+        }
+
+        .conteudo>span:nth-child(1) {
+            filter: blur(2px);
+        }
+
+        .conteudo>span:nth-child(2) {
+            filter: blur(5px);
+        }
+        input{
+            width: 250px;
+            height: 30px;
+            background-color: #020202;
+            color: aqua; 
+            border-color: aqua;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conteudo">
+        <div class="caixa">
+            <span>
+                
+               Conversor celsius >> Fahrenheit
+               <input type="number" placeholder="Temperatura em Celsius" id="temperatura-celsius"/>
+               <input type="button" value="Converter" onclick="converteParaFahrenheit()" />
+               <input type="text" id="resultado-fahrenheit" readonly>
+               
+            </span>
+        </div>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div>
+        <input type="text" id="nome-usuario" placeholder="Nome" >
+        <input type="button" value="Salvar" onclick="salvarNome()">
+
+    </div>
+</body>
+</head>
+<body>
+
+</body>
+</html>
