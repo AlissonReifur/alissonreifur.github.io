@@ -39,7 +39,7 @@
             background: linear-gradient(to right, var(--cores-dancantes));
             width: 550px;
             height: 390px;
-            border-radius: 10px;
+            border-radius: 0px;
             position: center;
             z-index: 999;
             animation: coresDancantes 1s linear infinite;
@@ -64,7 +64,7 @@
             background-color: var(--cor-background);
             width: 500px;
             height: 350px;
-            border-radius: 10px;
+            border-radius: 0px;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -113,8 +113,10 @@
     </div>
 
     <div>
-        <input type="text" id="nome-usuario" placeholder="Nome" >
-        <input type="button" value="Salvar" onclick="salvarNome()">
+        <input type="text" id="nome-usuario" placeholder="Nome" > <br>
+        <input type="number" id="idade-usuario" placeholder="Idade" > <br>
+
+        <input type="button" value="Salvar" onclick="salvarInfo()">
 
     </div>
 </body>
