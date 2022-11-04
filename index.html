@@ -6,6 +6,8 @@
     <title>Pagina Alisson</title>
     <script src="bd.js"></script>
     <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    
     
 
     <style>
@@ -21,15 +23,15 @@
             font-family: "Verdana", sans-serif;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
-            letter-spacing: 3px;
+            letter-spacing: 0px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             scroll-behavior: smooth;
-            margin: 0;
+            margin: 10;
         }
 
         html {
-            padding: 10rem;
+            padding-top: 10px 50px 20px;
             background-color: #212123;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: #EFEFEF;
@@ -37,12 +39,12 @@
 
         .conteudo {
             background: linear-gradient(to right, var(--cores-dancantes));
-            width: 550px;
-            height: 390px;
-            border-radius: 0px;
+            width: 290px;
+            height: 170px;
+            border-radius: 10px;
             position: center;
             z-index: 999;
-            animation: coresDancantes 1s linear infinite;
+            animation: coresDancantes 2s linear infinite;
         }
 
         @keyframes coresDancantes {
@@ -56,19 +58,20 @@
             position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate( -50%, -50%);
         }
 
         .conteudo .caixa {
             z-index: 1;
             background-color: var(--cor-background);
-            width: 500px;
-            height: 350px;
-            border-radius: 0px;
+            width: 250px;
+            height: 125px;
+            border-radius: 10px;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 5px;
+            padding: 10px;
+            
         }
 
         .conteudo>span {
@@ -85,21 +88,26 @@
         .conteudo>span:nth-child(2) {
             filter: blur(5px);
         }
+    
         input{
+            margin-left: 0%;
             width: 250px;
             height: 30px;
             background-color: #020202;
-            color: aqua; 
-            border-color: aqua;
-            
+            color: rgb(250, 250, 250); 
+            border-color: rgb(247, 250, 250);
+            border-radius: 5px;
         }
     </style>
 </head>
-
-<body>
-    <div class="conteudo">
-        <div class="caixa">
-            <span>
+<h1>Alisson Reifur</h1>
+<h2>Primeiros passos</h2>
+<main>
+    <section>
+    <body text="white">
+        <section class="conteudo">
+            <section class="caixa">
+                <span>
                 
                Conversor celsius >> Fahrenheit
                <input type="number" placeholder="Temperatura em Celsius" id="temperatura-celsius"/>
@@ -107,18 +115,27 @@
                <input type="text" id="resultado-fahrenheit" readonly>
                
             </span>
-        </div>
+        </section>
         <span></span>
         <span></span>
-    </div>
+    </section>
 
-    <div>
-        <input type="text" id="nome-usuario" placeholder="Nome" > <br>
-        <input type="number" id="idade-usuario" placeholder="Idade" > <br>
-
+    <section>
+        <h3>Registro BD</h3>
+        <input type="text" id="nome-usuario" placeholder="Nome" > 
+        <input type="number" id="idade-usuario" placeholder="Idade" > 
+        
         <input type="button" value="Salvar" onclick="salvarInfo()">
+    
+    </section>
+    <section>
+        <input type="text" id="nome-do-usuario" placeholder="Seu Nome"> 
+        <input type="button" value="Buscar Informação" onclick="pesquisaPorNome()"> 
+        <input type="text" id="resultado-pesquisa" readonly placeholder="Informações">
 
-    </div>
+    </section>
+     </section>
+</main>
 </body>
 </head>
 <body>

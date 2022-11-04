@@ -1,0 +1,33 @@
+
+*{
+
+    margin: 0px;
+    padding: 0px;
+}
+head{
+    text-align: left
+    
+}
+body{
+    text-align: left
+    
+}
+h1 {
+    text-align: left;
+    
+    
+}
+section {
+    position: left;
+    align-items: center;
+    flex-direction: column;
+    display: 100px;
+    
+}
+
+main{
+    display: center;
+   
+
+}
+

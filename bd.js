@@ -13,4 +13,22 @@ function salvarInfo() {
             nomeUsuario, idadeUsuario
         ]);
     });
-}
+};
+
+function pesquisaPorNome() {
+    const nomeUsuario = document.getElementById("nome-do-usuario").value;
+    console.log(nomeUsuario)
+
+    bd.transaction(function(ler){
+        ler.executeSql(`SELECT * FROM formulario WHERE nome="${nomeUsuario}"`,[], 
+        function (ler, resultados){
+        const tamanho = resultados.rows.length;
+           const msg = tamanho + " linhas encontradas"
+        console.log(msg)
+        }
+        
+        ) ;
+
+    });
+
+};
