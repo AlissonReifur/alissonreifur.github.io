@@ -1,144 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Alisson</title>
-    <script src="bd.js"></script>
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="style.css"/>
-    
-    
-
-    <style>
-        :root { 
-            --cor-background: #212123;
-            --cor-reflexo: rgba(255, 255, 255, 0.4);
-            --cores-dancantes: rgb(76, 217, 105), rgb(52, 170, 220), rgb(88, 86, 217),
-                rgb(255, 45, 83);
-                
-        }
-
-        * {
-            font-family: "Verdana", sans-serif;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            letter-spacing: 0px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            scroll-behavior: smooth;
-            margin: 10;
-        }
-
-        html {
-            padding-top: 10px 50px 20px;
-            background-color: #212123;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: #EFEFEF;
-        }
-
-        .conteudo {
-            background: linear-gradient(to right, var(--cores-dancantes));
-            width: 290px;
-            height: 170px;
-            border-radius: 10px;
-            position: center;
-            z-index: 999;
-            animation: coresDancantes 2s linear infinite;
-        }
-
-        @keyframes coresDancantes {
-            100% {
-                filter: hue-rotate(360deg);
-            }
-        }
-
-        .conteudo .caixa,
-        .conteudo span {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate( -50%, -50%);
-        }
-
-        .conteudo .caixa {
-            z-index: 1;
-            background-color: var(--cor-background);
-            width: 250px;
-            height: 125px;
-            border-radius: 10px;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 10px;
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mais uma página</title>
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="bd.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="subtitle">
+                <strong>HELP - ME </strong> 
+            </h1>
+        </header>
+        <hr />
+        <main>
             
-        }
+            <section> 
+            <h3 class="titulo">Conversor de Celsius em Fahrenheit</h3>
+                <input
+                    type="number"
+                    placeholder="Valor em Celsius"
+                    id="temperatura-celsius"
+                    min="-273,15"
+                />
 
-        .conteudo>span {
-            height: 100%;
-            width: 100%;
-            background: center;
-            border-radius: 10px;
-        }
+                <button type="button" onclick="converteParaFahrenheit()">
+                Converter
+                </button>
+                <input type="text" id="resultado-fahrenheit" readonly placeholder="Valor em Fahrenheit"/>
+                <label class="info-celsius">
+                </label>
 
-        .conteudo>span:nth-child(1) {
-            filter: blur(2px);
-        }
+            </section>
 
-        .conteudo>span:nth-child(2) {
-            filter: blur(5px);
-        }
-    
-        input{
-            margin-left: 0%;
-            width: 250px;
-            height: 30px;
-            background-color: #020202;
-            color: rgb(250, 250, 250); 
-            border-color: rgb(247, 250, 250);
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<h1>Alisson Reifur</h1>
-<h2>Primeiros passos</h2>
-<main>
-    <section>
-    <body text="white">
-        <section class="conteudo">
-            <section class="caixa">
-                <span>
-                
-               Conversor celsius >> Fahrenheit
-               <input type="number" placeholder="Temperatura em Celsius" id="temperatura-celsius"/>
-               <input type="button" value="Converter" onclick="converteParaFahrenheit()" />
-               <input type="text" id="resultado-fahrenheit" readonly>
-               
-            </span>
-        </section>
-        <span></span>
-        <span></span>
-    </section>
+            <section>
+                <h3>Banco de Dados</h3>
+                <input type="text" id="nome-usuario" placeholder="Nome" required/>
+                <input type="number" id="idade-usuario" placeholder="Idade" required/>
+                <input type="number" id="cpf-usuario" placeholder="CPF" required/>
+                <input type="date" id="nascimento-usuario" placeholder="Data De Nascimento" required/>
+                <input type="button" value="Salvar" onclick="salvarInfo()" />
+            </section>
+            <section>
+                <h3> Pesquisa BD</h3>
+                <input type="text" id="pesquisa-nome-usuario" placeholder="Nome">
+                <button type="button" onclick="pesquisaPorNome()">Buscar informação</button>
+                <input type="text" id="resultado-pesquisa" placeholder="Resultado Idade" readonly>
 
-    <section>
-        <h3>Registro BD</h3>
-        <input type="text" id="nome-usuario" placeholder="Nome" > 
-        <input type="number" id="idade-usuario" placeholder="Idade" > 
-        
-        <input type="button" value="Salvar" onclick="salvarInfo()">
-    
-    </section>
-    <section>
-        <input type="text" id="nome-do-usuario" placeholder="Seu Nome"> 
-        <input type="button" value="Buscar Informação" onclick="pesquisaPorNome()"> 
-        <input type="text" id="resultado-pesquisa" readonly placeholder="Informações">
-
-    </section>
-     </section>
-</main>
-</body>
-</head>
-<body>
-
-</body>
+                <p id="exibe-nome"></p>
+                <p id="exibe-idade"></p>
+                <p id="exibe-cpf"></p>
+                <p id="exibe-nascimento"></p>
+            </section>
+            <section>   
+            <h3>Exibe Banco de Dados</h3>
+                <button onclick="exibeBD()">Exibir</button>
+                <div id="lista-bd"></div>
+                <button onclick="limpaBDDiv()">Limpar</button>
+            </section>
+            <section>
+                <h3>Altera BD</h3>
+                <input type="text" id="nome-alteracao" placeholder="Nome">
+                <input type="text" id="idade-alteracao" placeholder="Idade">
+                <input type="text" id="cpf-alteracao" placeholder="cpf">
+                <input type="date" id="nascimento-alteracao" placeholder="Data de Nascimento">
+                <button onclick="alteraInfo()"> Alterar!</button>
+                <button onclick="excluiInfor()">Excluir!</button>
+            </section>   
+        </main>
+    </body>
 </html>
